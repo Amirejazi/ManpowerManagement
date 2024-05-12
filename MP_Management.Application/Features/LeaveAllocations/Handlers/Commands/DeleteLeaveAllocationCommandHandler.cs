@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveAllocations.Requests.Commands;
+using MP_Management.Domain;
 using MP_Management.Persistence.Contracts;
 
 namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Commands
@@ -24,6 +26,9 @@ namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Commands
 		public async Task<Unit> Handle(DeleteLeaveAllocationCommand request, CancellationToken cancellationToken)
 		{
 			var leaveAllocation = await _leaveAllocationRepository.GetEntityBYId(request.Id);
+			if (leaveAllocation == null)
+				throw new NotFoundException(nameof(LeaveAllocation), request.Id);
+
 			await _leaveAllocationRepository.DeleteEntity(leaveAllocation);
 			return Unit.Value;
 		}

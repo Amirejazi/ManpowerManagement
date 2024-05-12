@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using MediatR;
 using MP_Management.Application.DTOs.LeaveAllocation.Validators;
+using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveAllocations.Requests.Commands;
 using MP_Management.Persistence.Contracts;
 
@@ -22,13 +23,13 @@ namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Commands
 		public async Task<Unit> Handle(UpdateLeaveAllocationCommand request, CancellationToken cancellationToken)
         {
 			var validator = new UpdateLeaveAllocationDtoValidator(_leaveTypeRepository);
-			var validation = await validator.ValidateAsync(request.UpdateLeaveAllocationDto);
-			if (!validation.IsValid)
-				throw new Exception();
+			var validationResult = await validator.ValidateAsync(request.UpdateLeaveAllocationDto);
+			if (!validationResult.IsValid)
+				throw new ValidationException(validationResult);
 
 			var leaveAllocation = await _leaveAllocationRepository.GetEntityBYId(request.UpdateLeaveAllocationDto.Id);
             _mapper.Map(request.UpdateLeaveAllocationDto, leaveAllocation);
-            _leaveAllocationRepository.UpdateEntity(leaveAllocation);
+			await _leaveAllocationRepository.UpdateEntity(leaveAllocation);
             return Unit.Value;
         }
     }

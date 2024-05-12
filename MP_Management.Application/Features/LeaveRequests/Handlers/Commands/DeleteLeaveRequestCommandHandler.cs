@@ -5,7 +5,9 @@ using System.Text;
 using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
+using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveRequests.Requests;
+using MP_Management.Domain;
 using MP_Management.Persistence.Contracts;
 
 namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
@@ -24,6 +26,9 @@ namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 		public async Task Handle(DeleteLeaveRequestCommand request, CancellationToken cancellationToken)
 		{
 			var leaveRequest = await _leaveRequestRepository.GetEntityBYId(request.Id);
+			if (leaveRequest == null) 
+				throw new NotFoundException(nameof(LeaveRequest), request.Id);
+
 			await _leaveRequestRepository.DeleteEntity(leaveRequest);
 		}
 	}
