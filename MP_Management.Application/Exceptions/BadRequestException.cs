@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MP_Management.Application.Exceptions
 {
-	public class BadRequestException
+	public class BadRequestException: ApplicationException
 	{
 	}
 }
