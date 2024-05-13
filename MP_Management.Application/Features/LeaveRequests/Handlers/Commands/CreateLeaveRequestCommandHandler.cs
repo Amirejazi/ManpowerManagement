@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
 using MP_Management.Application.DTOs.LeaveRequest.Validators;
-using MP_Management.Application.DTOs.LeaveType.Validators;
 using MP_Management.Application.Features.LeaveRequests.Requests.Commands;
 using MP_Management.Domain;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
+using MP_Management.Application.Contracts.Infrastructure;
+using MP_Management.Application.Models;
 
 namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 {
@@ -18,12 +14,17 @@ namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 		private readonly ILeaveRequestRepository _leaveRequestRepository;
 		private readonly ILeaveTypeRepository _leaveTypeRepository;
 		private readonly IMapper _mapper;
+		private readonly IEmailSender _emailSender;
 
-		public CreateLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository, ILeaveTypeRepository leaveTypeRepository, IMapper mapper)
+		public CreateLeaveRequestCommandHandler(ILeaveRequestRepository leaveRequestRepository,
+			ILeaveTypeRepository leaveTypeRepository,
+			IMapper mapper,
+			IEmailSender emailSender)
 		{
 			_leaveRequestRepository = leaveRequestRepository;
 			_leaveTypeRepository = leaveTypeRepository;
 			_mapper = mapper;
+			_emailSender = emailSender;
 		}
 
 		public async Task<int> Handle(CreateLeaveRequestCommand request, CancellationToken cancellationToken)
@@ -35,6 +36,22 @@ namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 
 			var newLeaveRequest = _mapper.Map<LeaveRequest>(request.CreateLeaveRequestDto);
 			await _leaveRequestRepository.AddEntity(newLeaveRequest);
+
+			var email = new Email
+			{
+				To = "ejaziamirhosein@gmail.com",
+				Subject="leave request submitted",
+				Body=$"Your leave request for {request.CreateLeaveRequestDto.StartDate} to {request.CreateLeaveRequestDto.EndDate}"+
+				"has been submitted"
+			};
+			try
+			{
+				await _emailSender.SendEmail(email);
+			}
+			catch (Exception ex)
+			{
+				// log
+			}
 			return newLeaveRequest.Id;
 		}
 	}
