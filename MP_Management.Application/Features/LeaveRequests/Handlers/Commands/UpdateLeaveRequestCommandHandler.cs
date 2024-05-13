@@ -8,7 +8,7 @@ using MediatR;
 using MP_Management.Application.DTOs.LeaveRequest.Validators;
 using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveRequests.Requests.Commands;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 {

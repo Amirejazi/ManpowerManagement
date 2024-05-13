@@ -1,5 +1,5 @@
 ﻿using FluentValidation;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;

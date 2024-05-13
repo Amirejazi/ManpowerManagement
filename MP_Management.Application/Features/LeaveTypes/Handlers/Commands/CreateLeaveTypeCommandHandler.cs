@@ -5,7 +5,7 @@ using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveTypes.Requests.Commands;
 using MP_Management.Application.Responses;
 using MP_Management.Domain;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveTypes.Handlers.Commands
 {

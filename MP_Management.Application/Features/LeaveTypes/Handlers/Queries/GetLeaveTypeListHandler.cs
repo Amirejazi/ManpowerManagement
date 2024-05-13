@@ -2,7 +2,7 @@
 using MediatR;
 using MP_Management.Application.DTOs.LeaveType;
 using MP_Management.Application.Features.LeaveTypes.Requests.Queries;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveTypes.Handlers.Queries
 {

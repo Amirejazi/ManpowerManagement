@@ -1,6 +1,6 @@
 ﻿using FluentValidation;
 using MP_Management.Application.DTOs.Common.Validators;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;

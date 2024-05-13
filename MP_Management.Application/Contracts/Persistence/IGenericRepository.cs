@@ -1,4 +1,4 @@
-﻿namespace MP_Management.Persistence.Contracts
+﻿namespace MP_Management.Contracts.Persistence
 {
 	public interface IGenericRepository<TEntity> where TEntity : class
 	{

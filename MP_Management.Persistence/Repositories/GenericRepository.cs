@@ -1,6 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using MP_Management.Persistence.Context;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Persistence.Repositories
 {

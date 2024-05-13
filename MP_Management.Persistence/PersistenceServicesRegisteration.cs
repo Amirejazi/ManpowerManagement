@@ -2,7 +2,7 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MP_Management.Persistence.Context;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 using MP_Management.Persistence.Repositories;
 using System;
 using System.Collections.Generic;

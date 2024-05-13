@@ -1,6 +1,6 @@
 ﻿using MP_Management.Domain;
 using MP_Management.Persistence.Context;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 using System;
 using System.Collections.Generic;
 using System.Linq;

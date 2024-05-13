@@ -2,7 +2,7 @@
 using MediatR;
 using MP_Management.Application.DTOs.LeaveAllocation;
 using MP_Management.Application.Features.LeaveAllocations.Requests.Queries;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Queries
 {

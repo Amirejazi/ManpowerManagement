@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using FluentValidation;
 using MP_Management.Application.DTOs.Common.Validators;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.DTOs.LeaveRequest.Validators
 {

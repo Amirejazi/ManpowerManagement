@@ -3,7 +3,7 @@ using MediatR;
 using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveTypes.Requests;
 using MP_Management.Domain;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveTypes.Handlers.Commands
 {

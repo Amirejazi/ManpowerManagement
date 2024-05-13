@@ -4,7 +4,7 @@ using MP_Management.Application.DTOs.LeaveAllocation.Validators;
 using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveAllocations.Requests.Commands;
 using MP_Management.Domain;
-using MP_Management.Persistence.Contracts;
+using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Commands
 {

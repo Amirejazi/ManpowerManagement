@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using MP_Management.Domain;
 
-namespace MP_Management.Persistence.Contracts
+namespace MP_Management.Contracts.Persistence
 {
 	public interface ILeaveTypeRepository: IGenericRepository<LeaveType>
 	{
