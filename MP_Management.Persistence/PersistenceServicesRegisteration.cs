@@ -18,7 +18,7 @@ namespace MP_Management.Persistence
         {
 			services.AddDbContext<MP_MangementDbContext>(option =>
 			{
-				option.UseSqlServer(configuration.GetConnectionString("ConnectionString"));
+				option.UseSqlServer(configuration.GetConnectionString("MP_ManagementConnection"));
 			});
 
 			services.AddScoped(typeof(IGenericRepository<>), typeof(GenericRepository<>));
