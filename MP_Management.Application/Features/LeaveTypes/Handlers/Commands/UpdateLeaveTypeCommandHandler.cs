@@ -32,6 +32,9 @@ namespace MP_Management.Application.Features.LeaveTypes.Handlers.Commands
 				throw new ValidationException(validationResult);
 
 			var leaveType = await _leaveTypeRepository.GetEntityBYId(request.UpdateLeaveTypeDto.Id);
+			if (leaveType == null)
+				throw new NotFoundException(nameof(LeaveType), request.UpdateLeaveTypeDto.Id);
+
 			_mapper.Map(request.UpdateLeaveTypeDto, leaveType);
 			await _leaveTypeRepository.UpdateEntity(leaveType);
 

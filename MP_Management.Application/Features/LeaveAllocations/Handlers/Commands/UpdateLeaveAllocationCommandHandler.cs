@@ -4,6 +4,7 @@ using MP_Management.Application.DTOs.LeaveAllocation.Validators;
 using MP_Management.Application.Exceptions;
 using MP_Management.Application.Features.LeaveAllocations.Requests.Commands;
 using MP_Management.Contracts.Persistence;
+using MP_Management.Domain;
 
 namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Commands
 {
@@ -28,6 +29,9 @@ namespace MP_Management.Application.Features.LeaveAllocations.Handlers.Commands
 				throw new ValidationException(validationResult);
 
 			var leaveAllocation = await _leaveAllocationRepository.GetEntityBYId(request.UpdateLeaveAllocationDto.Id);
+			if (leaveAllocation == null)
+				throw new NotFoundException(nameof(LeaveAllocation), request.UpdateLeaveAllocationDto.Id);
+
             _mapper.Map(request.UpdateLeaveAllocationDto, leaveAllocation);
 			await _leaveAllocationRepository.UpdateEntity(leaveAllocation);
             return Unit.Value;

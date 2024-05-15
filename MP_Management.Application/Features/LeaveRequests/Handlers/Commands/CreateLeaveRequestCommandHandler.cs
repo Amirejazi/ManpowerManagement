@@ -6,6 +6,7 @@ using MP_Management.Domain;
 using MP_Management.Contracts.Persistence;
 using MP_Management.Application.Contracts.Infrastructure;
 using MP_Management.Application.Models;
+using MP_Management.Application.Exceptions;
 
 namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 {
@@ -30,9 +31,9 @@ namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 		public async Task<int> Handle(CreateLeaveRequestCommand request, CancellationToken cancellationToken)
 		{
 			var validator = new CreateLeaveRequestDtoValidator(_leaveTypeRepository);
-			var validation = await validator.ValidateAsync(request.CreateLeaveRequestDto);
-			if (!validation.IsValid)
-				throw new Exception();
+			var validationResult = await validator.ValidateAsync(request.CreateLeaveRequestDto);
+			if (!validationResult.IsValid)
+				throw new ValidationException(validationResult);
 
 			var newLeaveRequest = _mapper.Map<LeaveRequest>(request.CreateLeaveRequestDto);
 			await _leaveRequestRepository.AddEntity(newLeaveRequest);

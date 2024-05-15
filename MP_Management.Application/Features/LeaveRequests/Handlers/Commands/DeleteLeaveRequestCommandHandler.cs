@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 using AutoMapper;
 using MediatR;
 using MP_Management.Application.Exceptions;
-using MP_Management.Application.Features.LeaveRequests.Requests;
 using MP_Management.Domain;
 using MP_Management.Contracts.Persistence;
+using MP_Management.Application.Features.LeaveRequests.Requests.Commands;
 
 namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 {
-	public class DeleteLeaveRequestCommandHandler: IRequestHandler<DeleteLeaveRequestCommand>
+    public class DeleteLeaveRequestCommandHandler: IRequestHandler<DeleteLeaveRequestCommand>
 	{
 		private readonly ILeaveRequestRepository _leaveRequestRepository;
 		private readonly IMapper _mapper;
