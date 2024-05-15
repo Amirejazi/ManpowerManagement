@@ -10,7 +10,7 @@ namespace MP_Management.Application
 			// services.AddAutoMapper(typeof(MappingProfile));
 
 			services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
+			services.AddMediatR(cfg => cfg.RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
 		}
 	}
 }
