@@ -25,7 +25,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP_Management.Persistence",
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP_Management.Api", "MP_Management.Api\MP_Management.Api.csproj", "{18538FAF-F488-4603-9DCF-C8C1EE3DDAD8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP_Management.UnitTests", "MP_Management.UnitTests\MP_Management.UnitTests.csproj", "{3CBCE2BC-B4CF-4CB1-9CCA-8792D5A89E90}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MP_Management.UnitTests", "MP_Management.UnitTests\MP_Management.UnitTests.csproj", "{3CBCE2BC-B4CF-4CB1-9CCA-8792D5A89E90}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MP_Management.MVC", "MP_Management.MVC\MP_Management.MVC.csproj", "{2BA4FD1F-F112-4A1C-9C0C-A541529C28F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,6 +59,10 @@ Global
 		{3CBCE2BC-B4CF-4CB1-9CCA-8792D5A89E90}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3CBCE2BC-B4CF-4CB1-9CCA-8792D5A89E90}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3CBCE2BC-B4CF-4CB1-9CCA-8792D5A89E90}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2BA4FD1F-F112-4A1C-9C0C-A541529C28F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BA4FD1F-F112-4A1C-9C0C-A541529C28F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BA4FD1F-F112-4A1C-9C0C-A541529C28F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BA4FD1F-F112-4A1C-9C0C-A541529C28F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -72,6 +78,7 @@ Global
 		{0E4775EA-A212-460E-9FC0-C3C75962AB08} = {802238D9-D211-4343-B7B2-85BB8479557B}
 		{18538FAF-F488-4603-9DCF-C8C1EE3DDAD8} = {AC2CAC32-FBBD-42CF-9782-9AF5D2C5444C}
 		{3CBCE2BC-B4CF-4CB1-9CCA-8792D5A89E90} = {F351F2E6-8153-4C01-B671-227A515039AE}
+		{2BA4FD1F-F112-4A1C-9C0C-A541529C28F8} = {23404E20-4D55-4034-B428-1CB236C436DB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DB89778-C48C-4CD3-B7FD-6E0736B37ACB}
