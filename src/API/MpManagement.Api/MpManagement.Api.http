@@ -1,0 +1,6 @@
+@MpManagement.Api_HostAddress = http://localhost:5051
+
+GET {{MpManagement.Api_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
