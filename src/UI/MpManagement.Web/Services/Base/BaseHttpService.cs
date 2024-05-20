@@ -16,7 +16,7 @@ namespace MpManagement.Web.Services.Base
 			_localStorage = localStorage;
 		}
 
-		protected Response<Guid> ConvertApiException<Guid>(ApiException exception)
+		public Response<Guid> ConvertApiException<Guid>(ApiException exception)
 		{
 			if (exception.StatusCode == 40)
 			{
