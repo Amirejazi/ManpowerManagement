@@ -4,6 +4,7 @@ using MP_Management.Application.DTOs.LeaveType;
 using MP_Management.Application.Features.LeaveTypes.Requests;
 using MP_Management.Application.Features.LeaveTypes.Requests.Commands;
 using MP_Management.Application.Features.LeaveTypes.Requests.Queries;
+using MP_Management.Application.Responses;
 
 // For more information on enabling Web API for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -22,7 +23,8 @@ namespace MP_Management.Api.Controllers
 
         // GET: api/<LeaveTypeController>
         [HttpGet]
-		public async Task<ActionResult<List<LeaveTypeDTO>>> Get()
+		[ProducesResponseType(typeof(List<LeaveTypeDTO>), 200)]
+		public async Task<ActionResult<List<LeaveTypeDTO>>> GetAllLeaveTypes()
 		{
 			var leaveTypes = await _mediator.Send(new GetLeaveTypeListRequest());
 			return Ok(leaveTypes);
@@ -30,7 +32,8 @@ namespace MP_Management.Api.Controllers
 
 		// GET api/<LeaveTypeController>/5
 		[HttpGet("{id}")]
-		public async Task<ActionResult<LeaveTypeDTO>> Get(int id)
+		[ProducesResponseType(typeof(LeaveTypeDTO), 200)]
+		public async Task<ActionResult<LeaveTypeDTO>> GetLeaveType(int id)
 		{
 			var leaveType = await _mediator.Send(new GetLeaveTypeDetailRequest { Id = id});
 			return Ok(leaveType);
@@ -38,16 +41,22 @@ namespace MP_Management.Api.Controllers
 
 		// POST api/<LeaveTypeController>
 		[HttpPost]
-		public async Task<ActionResult> Post([FromBody] CreateLeaveTypeDTO leaveTypeDto)
+		[ProducesResponseType(typeof(BaseCommandResponse), 200)]
+		[ProducesResponseType(typeof(BaseCommandResponse), 400)]
+		public async Task<ActionResult> CreateLeaveType([FromBody] CreateLeaveTypeDTO leaveTypeDto)
 		{
 			var command = new CreateLeaveTypeCommand { CreateLeaveTypeDto = leaveTypeDto };
 			var response = await _mediator.Send(command);
-			return Ok(response);
+			if(response.Success)
+				return Ok(response);
+			return BadRequest(response);
+			
 		}
 
 		// PUT api/<LeaveTypeController>/5
 		[HttpPut("{id}")]
-		public async Task<ActionResult> Put([FromBody] UpdateLeaveTypeDTO leaveTypeDto)
+		[ProducesResponseType(204)]
+		public async Task<ActionResult> UpdateLeaveType([FromBody] UpdateLeaveTypeDTO leaveTypeDto)
 		{
 			var command = new UpdateLeaveTypeCommand { UpdateLeaveTypeDto = leaveTypeDto };
 			await _mediator.Send(command);
@@ -56,7 +65,8 @@ namespace MP_Management.Api.Controllers
 
 		// DELETE api/<LeaveTypeController>/5
 		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int id)
+		[ProducesResponseType(204)]
+		public async Task<ActionResult> DeleteLeaveType(int id)
 		{
 			var command = new DeleteLeaveTypeCommand { Id = id };
 			await _mediator.Send(command);

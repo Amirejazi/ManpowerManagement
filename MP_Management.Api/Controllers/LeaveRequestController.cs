@@ -22,7 +22,8 @@ namespace MP_Management.Api.Controllers
 
         // GET: api/<LeaveRequestController>
         [HttpGet]
-		public async Task<ActionResult<List<LeaveRequest>>> Get()
+		[ProducesResponseType(typeof(List<LeaveRequestDTO>), 200)]
+		public async Task<ActionResult<List<LeaveRequestDTO>>> GetAllLeaveRequests()
 		{
 			var leaveRequests = await _mediator.Send(new GetLeaveRequestListRequest());
 			return Ok(leaveRequests);
@@ -30,7 +31,8 @@ namespace MP_Management.Api.Controllers
 
 		// GET api/<LeaveRequestController>/5
 		[HttpGet("{id}")]
-		public async Task<ActionResult> Get(int id)
+		[ProducesResponseType(typeof(LeaveRequestDTO), 200)]
+		public async Task<ActionResult> GetLeaveRequest(int id)
 		{
 			var leaveRequest = await _mediator.Send(new GetLeaveRequestDetailRequest { Id = id });
 			return Ok(leaveRequest);
@@ -38,7 +40,8 @@ namespace MP_Management.Api.Controllers
 
 		// POST api/<LeaveRequestController>
 		[HttpPost]
-		public async Task<ActionResult> Post([FromBody] CreateLeaveRequestDTO createLeaveRequestDto)
+		[ProducesResponseType(typeof(int), 200)]
+		public async Task<ActionResult> CreateLeaveRequest([FromBody] CreateLeaveRequestDTO createLeaveRequestDto)
 		{
 			var command = new CreateLeaveRequestCommand { CreateLeaveRequestDto = createLeaveRequestDto };
 			var response = await _mediator.Send(command);
@@ -47,7 +50,8 @@ namespace MP_Management.Api.Controllers
 
 		// PUT api/<LeaveRequestController>/5
 		[HttpPut("{id}")]
-		public async Task<ActionResult> Put([FromBody] UpdateLeaveRequestDTO updateLeaveRequestDto)
+		[ProducesResponseType(204)]
+		public async Task<ActionResult> updateLeaveRequest([FromBody] UpdateLeaveRequestDTO updateLeaveRequestDto)
 		{
 			var command = new UpdateLeaveRequestCommand { UpdateLeaveRequestDto = updateLeaveRequestDto };
 			await _mediator.Send(command);
@@ -56,7 +60,8 @@ namespace MP_Management.Api.Controllers
 
 		// DELETE api/<LeaveRequestController>/5
 		[HttpDelete("{id}")]
-		public async Task<ActionResult> Delete(int id)
+		[ProducesResponseType(204)]
+		public async Task<ActionResult> DeleteLEaveRequest(int id)
 		{
 			var command = new DeleteLeaveRequestCommand { Id = id };
 			await _mediator.Send(command);
@@ -64,7 +69,8 @@ namespace MP_Management.Api.Controllers
 		}
 
 		[HttpPut("/change-apprval/{id}")]
-		public async Task<ActionResult> Put(int id , ChangeLeaveRequestApprovalDTO changeLeaveRequestApprovalDto)
+		[ProducesResponseType(204)]
+		public async Task<ActionResult> ChangeApproval(int id , ChangeLeaveRequestApprovalDTO changeLeaveRequestApprovalDto)
 		{
 			var command = new ChangeLeaveRequestApprovalCommand { ChangeLeaveRequestApprovalDto = changeLeaveRequestApprovalDto };
 			await _mediator.Send(command);
