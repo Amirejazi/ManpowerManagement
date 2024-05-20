@@ -34,7 +34,6 @@ namespace MP_Management.UnitTests.LeaveType.Commands
 
 			_createLeaveDto = new CreateLeaveTypeDTO
 			{
-				Id = 3,
 				Name = "Vacation",
 				DefaultDay = 15
 			};
