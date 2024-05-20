@@ -1,4 +1,6 @@
 using Hanssens.Net;
+using MpManagement.Web.Contracts;
+using MpManagement.Web.Services;
 using MpManagement.Web.Services.Client.Impeliments;
 using MpManagement.Web.Services.Client.Interfaces;
 using System.Reflection;
@@ -14,6 +16,7 @@ c.BaseAddress = new Uri(builder.Configuration.GetSection("ApiAddress").Value));
 builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddSingleton<ILocalStorage, LocalStorage>();
+builder.Services.AddScoped<ILeaveTypeService, LeaveTypeService>();
 
 var app = builder.Build();
 
@@ -34,6 +37,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
 	name: "default",
-	pattern: "{controller=Home}/{action=Index}/{id?}");
+	pattern: "{controller=LeaveType}/{action=Index}");
 
 app.Run();
