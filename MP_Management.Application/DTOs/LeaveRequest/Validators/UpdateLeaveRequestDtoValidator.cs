@@ -17,20 +17,11 @@ namespace MP_Management.Application.DTOs.LeaveRequest.Validators
         {
 			_leaveTypeRepository = leaveTypeRepository;
 
-			Include(new BaseDtoValidator());
+			Include(new CreateLeaveRequestDtoValidator(_leaveTypeRepository));
 
-			RuleFor(p => p.StartDate)
-				.LessThan(p => p.EndDate).WithMessage("{PropertyName} must be before {ComparisonValue}");
-			RuleFor(p => p.EndDate)
-				.GreaterThan(p => p.StartDate).WithMessage("{PropertyName} must be after {ComparisonValue}");
-			RuleFor(p => p.LeaveTypeId)
-				.GreaterThan(0)
-				.MustAsync(async (id, token) =>
-				{
-					var leaveTypeExist = await _leaveTypeRepository.ExistEntity(id);
-					return !leaveTypeExist;
-				})
-				.WithMessage("{PropertyName} does not exist");
+			RuleFor(p => p.Id).NotNull().WithMessage("{PropertyName} is required.");
+			RuleFor(p => p.Canceled).NotNull().WithMessage("{PropertyName} is required.");
+
 		}
-    }
+	}
 }

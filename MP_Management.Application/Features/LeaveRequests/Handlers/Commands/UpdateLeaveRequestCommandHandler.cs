@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MediatR;
 using MP_Management.Application.DTOs.LeaveRequest.Validators;
 using MP_Management.Application.Exceptions;
@@ -32,16 +27,9 @@ namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 			if (!validationResult.IsValid)
 				throw new ValidationException(validationResult);
 
-			var leaveRequest = await _leaveRequestRepository.GetEntityBYId(request.Id);
-			if (request.UpdateLeaveRequestDto != null)
-			{
-				_mapper.Map(request.UpdateLeaveRequestDto, leaveRequest);
-				await _leaveRequestRepository.UpdateEntity(leaveRequest);
-			}
-			else if (request.ChangeLeaveRequestApprovalDto != null)
-			{
-				await _leaveRequestRepository.ChangeApprovalStatus(leaveRequest,  request.ChangeLeaveRequestApprovalDto.Approved);
-			}
+			var leaveRequest = await _leaveRequestRepository.GetEntityBYId(request.UpdateLeaveRequestDto.Id);
+			_mapper.Map(request.UpdateLeaveRequestDto, leaveRequest);
+			await _leaveRequestRepository.UpdateEntity(leaveRequest);
 			
 			return Unit.Value;
 		}

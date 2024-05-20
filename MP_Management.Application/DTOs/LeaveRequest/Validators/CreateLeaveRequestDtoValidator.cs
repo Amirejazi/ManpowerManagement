@@ -17,8 +17,6 @@ namespace MP_Management.Application.DTOs.LeaveRequest.Validators
         {
 			_leaveTypeRepository = leaveTypeRepository;
 
-			Include(new BaseDtoValidator());
-
 			RuleFor(p => p.StartDate)
 				.LessThan(p => p.EndDate).WithMessage("{PropertyName} must be before {ComparisonValue}");
 			RuleFor(p => p.EndDate)
@@ -28,7 +26,7 @@ namespace MP_Management.Application.DTOs.LeaveRequest.Validators
 				.MustAsync(async (id, token) =>
 				{
 					var leaveTypeExist = await _leaveTypeRepository.ExistEntity(id);
-					return !leaveTypeExist;
+					return leaveTypeExist;
 				})
 				.WithMessage("{PropertyName} does not exist");
         }

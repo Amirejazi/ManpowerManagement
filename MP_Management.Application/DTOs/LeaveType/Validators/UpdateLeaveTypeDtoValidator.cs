@@ -1,4 +1,6 @@
 ﻿using FluentValidation;
+using MP_Management.Application.DTOs.Common;
+using MP_Management.Application.DTOs.Common.Validators;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +15,7 @@ namespace MP_Management.Application.DTOs.LeaveType.Validators
         {
             Include(new ILeaveTypeDtoValidator());
 
-            RuleFor(p => p.Id).NotNull().WithMessage("{PropertyName} is required.");
+            Include(new BaseDtoValidator());
         }
     }
 }

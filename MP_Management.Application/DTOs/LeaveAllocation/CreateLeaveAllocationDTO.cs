@@ -2,7 +2,7 @@
 
 namespace MP_Management.Application.DTOs.LeaveAllocation
 {
-	public class CreateLeaveAllocationDTO: LeaveAllocationDTO
+	public class CreateLeaveAllocationDTO
 	{
 		public int NumberOfDays { get; set; }
 		public int LeaveTypeId { get; set; }

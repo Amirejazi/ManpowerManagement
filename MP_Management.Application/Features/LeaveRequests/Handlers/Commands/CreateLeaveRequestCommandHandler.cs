@@ -38,21 +38,21 @@ namespace MP_Management.Application.Features.LeaveRequests.Handlers.Commands
 			var newLeaveRequest = _mapper.Map<LeaveRequest>(request.CreateLeaveRequestDto);
 			await _leaveRequestRepository.AddEntity(newLeaveRequest);
 
-			var email = new Email
-			{
-				To = "ejaziamirhosein@gmail.com",
-				Subject="leave request submitted",
-				Body=$"Your leave request for {request.CreateLeaveRequestDto.StartDate} to {request.CreateLeaveRequestDto.EndDate}"+
-				"has been submitted"
-			};
-			try
-			{
-				await _emailSender.SendEmail(email);
-			}
-			catch (Exception ex)
-			{
-				// log
-			}
+			//var email = new Email
+			//{
+			//	To = "ejaziamirhosein@gmail.com",
+			//	Subject="leave request submitted",
+			//	Body=$"Your leave request for {request.CreateLeaveRequestDto.StartDate} to {request.CreateLeaveRequestDto.EndDate}"+
+			//	"has been submitted"
+			//};
+			//try
+			//{
+			//	await _emailSender.SendEmail(email);
+			//}
+			//catch (Exception ex)
+			//{
+			//	// log
+			//}
 			return newLeaveRequest.Id;
 		}
 	}

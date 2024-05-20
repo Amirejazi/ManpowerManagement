@@ -15,8 +15,8 @@ namespace MP_Management.Application.DTOs.LeaveAllocation.Validators
 
         public UpdateLeaveAllocationDtoValidator(ILeaveTypeRepository leaveTypeRepository)
         {
-            Include(new BaseDtoValidator());
             Include(new LeaveAllocationDtoValidators(leaveTypeRepository));
+
         }
     }
 }

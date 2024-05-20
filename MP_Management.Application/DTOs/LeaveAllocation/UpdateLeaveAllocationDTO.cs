@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MP_Management.Application.DTOs.LeaveAllocation
 {
-	public class UpdateLeaveAllocationDTO: CreateLeaveAllocationDTO
+	public class UpdateLeaveAllocationDTO: LeaveAllocationDTO
 	{
 	}
 }

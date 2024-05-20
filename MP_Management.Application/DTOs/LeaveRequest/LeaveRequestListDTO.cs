@@ -10,7 +10,7 @@ namespace MP_Management.Application.DTOs.LeaveRequest
 {
 	public class LeaveRequestListDTO: BaseDTO
 	{
-		public Domain.LeaveType LeaveType { get; set; }
+		public int LeaveTypeId { get; set; }
 		public DateTime DateRequest { get; set; }
 		public bool Aproved { get; set; }
 	}

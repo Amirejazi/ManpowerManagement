@@ -9,7 +9,7 @@ using MP_Management.Contracts.Persistence;
 
 namespace MP_Management.Application.Features.LeaveTypes.Handlers.Commands
 {
-	public class CreateLeaveTypeCommandHandler: IRequestHandler<CreateLeaveTypeCommand, BaseCommandResponse>
+	public class CreateLeaveTypeCommandHandler : IRequestHandler<CreateLeaveTypeCommand, BaseCommandResponse>
 	{
 		private readonly ILeaveTypeRepository _leaveTypeRepository;
 		private readonly IMapper _mapper;
@@ -29,10 +29,10 @@ namespace MP_Management.Application.Features.LeaveTypes.Handlers.Commands
 			{
 				response.Success = false;
 				response.Message = "Creation Failed!";
-				response.Errors = validationResult.Errors.Select(v=>v.ErrorMessage).ToList();
+				response.Errors = validationResult.Errors.Select(v => v.ErrorMessage).ToList();
 				return response;
 			}
-				
+
 			var newLeaveType = _mapper.Map<LeaveType>(request.CreateLeaveTypeDto);
 			await _leaveTypeRepository.AddEntity(newLeaveType);
 			response.Success = true;
