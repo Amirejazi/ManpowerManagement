@@ -1,6 +1,6 @@
-﻿using MP_Management.MVC.Services.Client.Impeliments;
+﻿using MpManagement.Web.Services.Client.Impeliments;
 
-namespace MP_Management.MVC.Services.Client.Interfaces
+namespace MpManagement.Web.Services.Client.Interfaces
 {
 	[System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]
 	public partial interface IClient

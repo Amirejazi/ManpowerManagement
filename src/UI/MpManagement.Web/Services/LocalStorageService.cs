@@ -1,7 +1,7 @@
 ﻿using Hanssens.Net;
-using MP_Management.MVC.Contracts;
+using MpManagement.Web.Contracts;
 
-namespace MP_Management.MVC.Services
+namespace MpManagement.Web.Services
 {
 	public class LocalStorageService : ILocalStorageService
 	{

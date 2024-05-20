@@ -1,9 +1,9 @@
 ﻿using Hanssens.Net;
-using MP_Management.MVC.Services.Client.Impeliments;
-using MP_Management.MVC.Services.Client.Interfaces;
+using MpManagement.Web.Services.Client.Impeliments;
+using MpManagement.Web.Services.Client.Interfaces;
 using System.Net.Http.Headers;
 
-namespace MP_Management.MVC.Services.Base
+namespace MpManagement.Web.Services.Base
 {
 	public class BaseHttpService
 	{

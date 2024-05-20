@@ -1,4 +1,4 @@
-﻿namespace MP_Management.MVC.Contracts
+﻿namespace MpManagement.Web.Contracts
 {
 	public interface ILocalStorageService
 	{

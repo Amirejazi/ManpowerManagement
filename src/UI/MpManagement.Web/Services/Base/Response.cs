@@ -1,4 +1,4 @@
-﻿namespace MP_Management.MVC.Services.Base
+﻿namespace MpManagement.Web.Services.Base
 {
 	public class Response<T>
 	{

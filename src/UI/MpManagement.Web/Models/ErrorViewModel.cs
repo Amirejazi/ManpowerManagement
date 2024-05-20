@@ -1,4 +1,4 @@
-namespace MP_Management.MVC.Models
+namespace MpManagement.Web.Models
 {
 	public class ErrorViewModel
 	{

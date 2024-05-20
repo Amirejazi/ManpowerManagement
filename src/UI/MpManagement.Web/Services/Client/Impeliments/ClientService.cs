@@ -17,9 +17,9 @@
 #pragma warning disable 8625 // Disable "CS8625 Cannot convert null literal to non-nullable reference type"
 #pragma warning disable CS8765 // Nullability of type of parameter doesn't match overridden member (possibly because of nullability attributes).
 
-namespace MP_Management.MVC.Services.Client.Impeliments
+namespace MpManagement.Web.Services.Client.Impeliments
 {
-	using MP_Management.MVC.Services.Client.Interfaces;
+	using MpManagement.Web.Services.Client.Interfaces;
 	using System = global::System;
 
 	[System.CodeDom.Compiler.GeneratedCode("NSwag", "14.0.7.0 (NJsonSchema v11.0.0.0 (Newtonsoft.Json v13.0.0.0))")]

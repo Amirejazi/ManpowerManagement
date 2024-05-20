@@ -1,4 +1,4 @@
-﻿namespace MP_Management.MVC.Services.Client.Interfaces
+﻿namespace MpManagement.Web.Services.Client.Interfaces
 {
 	public partial interface IClient
 	{

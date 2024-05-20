@@ -1,6 +1,6 @@
-﻿using MP_Management.MVC.Services.Client.Interfaces;
+﻿using MpManagement.Web.Services.Client.Interfaces;
 
-namespace MP_Management.MVC.Services.Client.Impeliments
+namespace MpManagement.Web.Services.Client.Impeliments
 {
 	public partial class Client: IClient
 	{

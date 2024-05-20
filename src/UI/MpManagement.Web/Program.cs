@@ -1,6 +1,6 @@
 using Hanssens.Net;
-using MP_Management.MVC.Services.Client.Impeliments;
-using MP_Management.MVC.Services.Client.Interfaces;
+using MpManagement.Web.Services.Client.Impeliments;
+using MpManagement.Web.Services.Client.Interfaces;
 using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
