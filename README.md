@@ -15,3 +15,7 @@ Commands/Queries handling using [MediatR](https://github.com/jbogard/MediatR) li
 
 ## Validation
 Data validation using [FluentValidation](https://github.com/JeremySkinner/FluentValidation)
+
+
+## Structure
+<img src = "https://github.com/Amirejazi/ManpowerManagement/blob/master/docs/structur_of_project.png" width ="338px" height="315" >
