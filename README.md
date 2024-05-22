@@ -3,7 +3,7 @@
 ## Description
 Sample .NET Core REST API application implemented with basic [CQRS](https://docs.microsoft.com/en-us/azure/architecture/guide/architecture-styles/cqrs) approach.
 
-Use Asp.net Core WebApp for UI.
+Use Asp.net Core WebApp As UI Client.
 
 ## Architecture [Clean Architecture](http://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html)
 <img src = "https://github.com/Amirejazi/ManpowerManagement/blob/master/docs/clean_architecture.jpg" width = 450px>

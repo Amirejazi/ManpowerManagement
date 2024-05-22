@@ -15,19 +15,21 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastru
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{23404E20-4D55-4034-B428-1CB236C436DB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagment.Domain", "src\Core\MpManagment.Domain\MpManagment.Domain.csproj", "{590A18EB-35C2-4399-A72E-1A84972B44A2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagment.Domain", "src\Core\MpManagment.Domain\MpManagment.Domain.csproj", "{590A18EB-35C2-4399-A72E-1A84972B44A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.Application", "src\Core\MpManagement.Application\MpManagement.Application.csproj", "{936A2B5F-9AF1-446D-83BC-BAE29F7F217E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagement.Application", "src\Core\MpManagement.Application\MpManagement.Application.csproj", "{936A2B5F-9AF1-446D-83BC-BAE29F7F217E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.Persistence", "src\Infrastructure\MpManagement.Persistence\MpManagement.Persistence.csproj", "{F570A608-7CAF-4330-946C-A4622C24508D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagement.Persistence", "src\Infrastructure\MpManagement.Persistence\MpManagement.Persistence.csproj", "{F570A608-7CAF-4330-946C-A4622C24508D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.Infrastructure", "src\Infrastructure\MpManagement.Infrastructure\MpManagement.Infrastructure.csproj", "{C979B7CD-24FE-424C-829C-A8EA9164679D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagement.Infrastructure", "src\Infrastructure\MpManagement.Infrastructure\MpManagement.Infrastructure.csproj", "{C979B7CD-24FE-424C-829C-A8EA9164679D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.UnitTests", "test\MpManagement.UnitTests\MpManagement.UnitTests.csproj", "{5A7D1785-6B87-4E50-8DE9-C7B52D9E3A57}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagement.UnitTests", "test\MpManagement.UnitTests\MpManagement.UnitTests.csproj", "{5A7D1785-6B87-4E50-8DE9-C7B52D9E3A57}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.Api", "src\API\MpManagement.Api\MpManagement.Api.csproj", "{3BF057DE-B1FD-4849-8A14-4084AF588FEE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagement.Api", "src\API\MpManagement.Api\MpManagement.Api.csproj", "{3BF057DE-B1FD-4849-8A14-4084AF588FEE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.Web", "src\UI\MpManagement.Web\MpManagement.Web.csproj", "{01FB538E-66F3-410B-B533-9A08F678227A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MpManagement.Web", "src\UI\MpManagement.Web\MpManagement.Web.csproj", "{01FB538E-66F3-410B-B533-9A08F678227A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MpManagement.Identity", "src\Infrastructure\MpManagement.Identity\MpManagement.Identity.csproj", "{395D9981-F9C2-4EAE-B047-B6F5B4C6E4F8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -63,6 +65,10 @@ Global
 		{01FB538E-66F3-410B-B533-9A08F678227A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01FB538E-66F3-410B-B533-9A08F678227A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01FB538E-66F3-410B-B533-9A08F678227A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{395D9981-F9C2-4EAE-B047-B6F5B4C6E4F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{395D9981-F9C2-4EAE-B047-B6F5B4C6E4F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{395D9981-F9C2-4EAE-B047-B6F5B4C6E4F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{395D9981-F9C2-4EAE-B047-B6F5B4C6E4F8}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -79,6 +85,7 @@ Global
 		{5A7D1785-6B87-4E50-8DE9-C7B52D9E3A57} = {F351F2E6-8153-4C01-B671-227A515039AE}
 		{3BF057DE-B1FD-4849-8A14-4084AF588FEE} = {AC2CAC32-FBBD-42CF-9782-9AF5D2C5444C}
 		{01FB538E-66F3-410B-B533-9A08F678227A} = {23404E20-4D55-4034-B428-1CB236C436DB}
+		{395D9981-F9C2-4EAE-B047-B6F5B4C6E4F8} = {802238D9-D211-4343-B7B2-85BB8479557B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {6DB89778-C48C-4CD3-B7FD-6E0736B37ACB}
